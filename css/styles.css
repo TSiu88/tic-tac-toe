@@ -1,0 +1,30 @@
+h1{
+  text-align: center;
+}
+
+.mid-row {
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+}
+
+.mid-col {
+  border-left: 2px solid;
+  border-right: 2px solid;
+}
+
+#boardScreen {
+  text-align: center;
+}
+
+#boardGame {
+  width: 600px;
+  display: inline-block;
+  margin: 50px;
+}
+
+#boardGame .col {
+  border-color: darkgray;
+  height: 200px;
+  font-size: 150pt;
+  line-height: 100pt;
+}

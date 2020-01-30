@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Tic Tac Toe</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Tic Tac Toe</h1>
+        <p>Play tic tac toe against another person!  Get three in a row to win!</p>
+      </div>
+      
+
+      <div id="startScreen">
+        <h2>Start Game:</h2>
+        <button id="startButton">Play</button>
+      </div>
+
+
+      <div id="boardScreen">
+        <h2>Game in progress:</h2>
+        <div class="row">
+          <div class="col col-6-sm" id="player1Turn">
+            Your Turn
+          </div>
+          <div class="col col-6-sm" id="player2Turn">
+            Your Turn
+          </div>
+        </div>
+
+        <div id="boardGame">
+          <div class="row">
+            <div class="col col-4-xs" id="0"></div>
+            <div class="mid-col col col-4-xs" id="1"></div>
+            <div class="col col-4-xs" id="2"></div>
+          </div>
+          <div class="row">
+            <div class="mid-row col col-4-xs" id="3"></div>
+            <div class="mid-row mid-col col col-4-xs" id="4"></div>
+            <div class="mid-row col col-4-xs" id="5"></div>
+          </div>
+          <div class="row">
+            <div class="col col-4-xs" id="6"></div>
+            <div class="col mid-col col-4-xs" id="7"></div>
+            <div class="col col-4-xs" id="8"></div>
+          </div>
+        </div>
+        <br>
+        <button id="submitTurnButton">Submit</button>
+      </div>
+
+      <div id="gameOverScreen">
+        <h2>Game Over!</h2>
+        <h3 id="p1Win">Player 1 has won!</h3>
+        <h3 id="p2Win">Player 2 has won!</h3>
+        <h3 id="tieGame">It's a cat's game!  You've tied!</h3>
+        <button id="playAgain">Play Again?</button>
+      </div>
+
+    </div>
+  </body>
+</html>
