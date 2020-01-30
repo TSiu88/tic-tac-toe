@@ -25,22 +25,32 @@ Game.prototype.checkSpotEmpty = function(spotNumber){
   }
 }
 
-Game.prototype.evaluateWin = function(){
+Game.prototype.evaluateWinner = function(){
   var player = this.getCurrentPlayer();
   var newestSpot = this.currentSelection;
-  if (newestSpot === 4){
-    if ((this.getSpotString(1) === player && this.getSpotString(7) === player) || (this.getSpotString(3) === player && this.getSpotString(5) === player) || (this.getSpotString(2) === player && this.getSpotString(6) === player) || (this.getSpotString(0) === player && this.getSpotString(8) === player)) {
-      return player;
-    } else {
-      console.log("no winner");
-    }
-  } else if (newestSpot%2 === 0){
-    if (true) {
-      // check edges
-    }
-  } else { //already checked center cross
-    console.log("no winner")
+  console.log(newestSpot);
+  console.log(this.getSpotString(newestSpot));
+
+  if (this.getSpotString(0) === player && this.getSpotString(1) === player && this.getSpotString(2) === player) {
+    return player;
+  } else if (this.getSpotString(3) === player && this.getSpotString(4) === player && this.getSpotString(5) === player) {
+    return player;
+  } else if (this.getSpotString(6) === player && this.getSpotString(7) === player && this.getSpotString(8) === player) {
+    return player;
+  } else if (this.getSpotString(0) === player && this.getSpotString(3) === player && this.getSpotString(6) === player) {
+    return player;
+  } else if (this.getSpotString(1) === player && this.getSpotString(4) === player && this.getSpotString(7) === player) {
+    return player;
+  } else if (this.getSpotString(2) === player && this.getSpotString(5) === player && this.getSpotString(8) === player) {
+    return player;
+  } else if (this.getSpotString(0) === player && this.getSpotString(4) === player && this.getSpotString(8) === player) {
+    return player;
+  } else if (this.getSpotString(2) === player && this.getSpotString(4) === player && this.getSpotString(6) === player) {
+    return player;
+  } else {
+    return "none";
   }
+
 }
 
 // User Interface Logic -----------------
@@ -63,21 +73,46 @@ function markSpot(spotNumber){
 }
 
 function isGameOver(){
-
-  // 
-  if (game.currentTurn === 9){
+  var winner = game.evaluateWinner();
+  console.log("winner:",winner)
+  console.log(game.currentTurn);
+  if (winner === "x" || winner === "o"){
+    $("#gameOverScreen").show();
+    $("#submitTurnButton").hide();
+    if (winner === "x"){
+      $("#p1Win").show();
+    } else if (winner === "o"){
+      $("#p2Win").show();
+    }
+   return true;
+  } else if (game.currentTurn >= 9) {
+    $("#gameOverScreen").show();
+    $("#submitTurnButton").hide();
+    console.log("in tie");
+    $("#tieGame").show();
     return true;
-  }else{
+  } else {
     return false;
   }
+}
+
+function resetBoard(){
+  for(var i=0; i<=8; i++){
+    $(`#${i}`).text("");
+  }
+  $("#submitTurnButton").show();
 }
 
 $(document).ready(function(){
   $("#startButton").click(function(){
     game = new Game();
-    // $("#startScreen").hide();
-    // $("#boardScreen").show();
-    // $("#gameOverScreen").hide();
+    resetBoard();
+    $("#startScreen").hide();
+    $("#boardScreen").show();
+    $("#gameOverScreen").hide();
+    $("#p1Win").hide();
+    $("#p2Win").hide();
+    $("#tieGame").hide();
   });
 
   $(`#boardGame`).on("click", ".col", function() {
@@ -89,16 +124,19 @@ $(document).ready(function(){
     if (game.currentSelection !== -1) {
       game.spots[game.currentSelection] = game.getCurrentPlayer();
 
-      if (game.currentTurn > 5){
+      if (game.currentTurn >= 5){
         isGameOver();
       }
-
       game.currentSelection =-1;
       game.currentTurn++;
       console.log(game);
-
     }
   });
  
+  $("#playAgain").click(function(){
+    $("#gameOverScreen").hide();
+    $("#boardScreen").hide();
+    $("#startScreen").show();
+  });
 
 });
