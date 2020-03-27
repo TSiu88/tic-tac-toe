@@ -1,22 +1,33 @@
 # _Tic Tac Toe_
 
-#### _{Brief description of application}, 01.30.2020_
+#### _Tic Tac Toe Game, 01.30.2020_
 
 #### By _**Tiffany Siu and Krista Rutz**_
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_Play Tic Tac Toe against another person! This program makes a game that can be played between two players taking turns and will tell who the winner is._
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
+### Requirements to Run
 
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
+* _Web Browser_
+
+### Instructions
+
+*This page may be viewed by:*
+
+1. Clone the [repository](https://github.com/TSiu88/tic-tac-toe.git) from my [GitHub page](https://github.com/TSiu88)
+2. Open the **index.html** file in any web browser.
+
+## Other Technologies Used
+* _HTML_
+* _CSS_
+* _Javascript_
+* _JQuery 3.4.1_
+* _Bootstrap 4.4.1_
+* _Markdown_
 
 ## Specifications
 
@@ -57,11 +68,7 @@ _There are currently no known bugs in this program_
 
 ## Support and contact details
 
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
-
-## Technologies Used
-
-_{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+_If there are any question or concerns please contact me at my [email](mailto:tsiu88@gmail.com). Thank you._
 
 ### License
 
